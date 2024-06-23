@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+spec:
+  replicas: 3  
+  selector:
+    matchLabels:
+      app: web-app  
+  template:
+    metadata:
+      labels:
+        app: web-app  
+    spec:
+      containers:
+      - name: web-app
+        image: wlcamargo/web-application
+        ports:
+          - containerPort: 5000
+        env:
+          - name: MONGODB_DB
+            value: admin  
+          - name: MONGODB_HOST
+            value: mongodb-service  
+          - name: MONGODB_PORT
+            value: "27017"  
+          - name: MONGODB_USERNAME
+            value: mongouser  
+          - name: MONGODB_PASSWORD
+            value: mongopassword
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  type: NodePort
+  selector:
+    app: web-app  
+  ports:
+    - port: 5000
+      targetPort: 5000
