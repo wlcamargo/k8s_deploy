@@ -98,10 +98,12 @@ sample:
 Parabéns! Sua aplicação web já está rodando no Kubernetes. Vale ressaltar que essa é a forma mais simples de execução do Kubernetes. A seguir, vamos começar a simular algo mais perto do cenário de produção.
 
 ## Configs avançadas
-### Executar como se fosse com alta disponibilidades
+### Executar como se fosse com alta disponibilidade
 ```
 kind create cluster --name k8s-prd --config kind-config-ha.yml
 ```
+sample:
+![image](assets/simulation_ha.png)
 
 
 
