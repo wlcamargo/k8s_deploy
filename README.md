@@ -80,7 +80,7 @@ kubectl get all
 sample:
 ![image](assets/get_all.png)
 
-### Faça Port-forward para Acessar pelo navegador
+### Faça Port-forward para acessar pelo navegador
 ```
 kubectl port-forward service/web-service 5000:5000
 ```
@@ -94,8 +94,15 @@ localhost:5000
 sample:
 ![image](assets/application.png)
 
-### Conclusão
-Parabéns! Sua aplicação web já está rodando no Kubernetes.
+### Considerações
+Parabéns! Sua aplicação web já está rodando no Kubernetes. Vale ressaltar que essa é a forma mais simples de execução do Kubernetes. A seguir, vamos começar a simular algo mais perto do cenário de produção.
+
+## Configs avançadas
+### Executar como se fosse com alta disponibilidades
+```
+kind create cluster --name k8s-prd --config kind-config-ha.yml
+```
+
 
 
 ## Developer
@@ -112,4 +119,5 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 https://kind.sigs.k8s.io/docs/user/using-wsl2/
 
+https://kind.sigs.k8s.io/docs/user/quick-start/#configuring-your-kind-cluster
 
