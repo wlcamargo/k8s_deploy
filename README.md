@@ -114,10 +114,6 @@ kind create cluster --name k8s-prd --config kind-config-ha.yml
 sample:
 ![image](assets/simulation_ha.png)
 
-### Installar o Ingress Controller do Nginx
-```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
-```
 
 ## Developer
 | Desenvolvedor      | LinkedIn                                   | Email                        | Portfólio                              |
